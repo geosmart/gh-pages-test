@@ -1,0 +1,327 @@
+﻿<!--模块Tabs-->  
+<div class="service-wrap" id="container-modules">
+    <div class="service-tab">
+        <ul class="nav nav-tabs">
+            <li class="active item">
+                <!--加不加a-->
+                <a href="javascript:;">
+                    <span class="service-icon service-icon1"></span>
+                    <span class="zh">负载均衡</span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="javascript:;">
+                    <span class="service-icon service-icon2"></span>
+                    <span class="zh">Web服务器</span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="javascript:;">
+                    <span class="service-icon service-icon3"></span>
+                    <span class="zh">缓存</span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="javascript:;">
+                    <span class="service-icon service-icon4"></span>
+                    <span class="zh">数据库</span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="javascript:;">
+                    <span class="service-icon service-icon5"></span>
+                    <span class="zh">安全</span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="javascript:;">
+                    <span class="service-icon service-icon6"></span>
+                    <span class="zh">任务调度</span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="javascript:;">
+                    <span class="service-icon service-icon7"></span>
+                    <span class="zh">存储服务</span>
+                </a>
+            </li>
+            <li class="item">
+                <a href="javascript:;">
+                    <span class="service-icon service-icon8"></span>
+                    <span class="zh">第三方服务</span>
+                </a>
+            </li>
+        </ul>
+        <div class="service-inner">
+            <!--负载均衡开始-->
+            <div class="inner-item row-fluid">
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/intro/architecture.html#sae">"7层"反向代理</a></h5>
+                        <p>SAE架构的最外层是"7层"，为SAE提供负载均衡、健康检查等功能。7层"是HTTP反向代理，负责响应用户的HTTP请求，分析请求，并转发到后端的Web服务池上。</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/seven_levels.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/intro/architecture.html#sae">负载均衡</a></h5>
+                        <p>SAE的服务器采用分布式部署的架构，这就需要均衡每一台服务器的负载，从而保证每一个请求的访问速度。负载均衡的主要作用是代理和转发，即将用户发送到"7层"的请求，经分析后转发到负载相对较小的服务器上。</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/load_balance.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/intro/architecture.html#sae">健康检查</a></h5>
+                        <p>“7层”会自动的对后端的服务器状态进行检查，若“7层”在给定的时间内没有收到服务器的反馈信息则认为服务器不可用，就不再将请求转发给相应的服务器。</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/safe_check.png">
+                    </div>
+                </div>
+             </div>
+            <!--负载均衡结束-->
+            <!--Web服务器开始-->
+            <div class="hide inner-item row-fluid">
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/intro/architecture.html#sae">分布式部署</a></h5>
+                        <p>SAE的Web服务器采用分布式部署的方式，开发者将代码部署到SAE前端机后，会通过同步的方式，将代码部署到SAE所有的Web服务器。相当于在每一台Web服务器上都有备份，
+                            如此，即使某一台服务器宕机，用户请求也会被转发到其他的服务器上，不会影响应用的正常使用，大大提高了应用的稳定性。</p>
+                        <p>另外，值得一提的是，除了分布式部署，SAE还提供完整的分布式Web服务的解决方案，其中包括分布式数据库、分布式文件系统，更包括分布式定时器系统、网页抓取服务、图像处理服务等。
+                        </p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/distributed.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/runtime.html#id4">沙箱</a></h5>
+                        <p>SAE作为公有云平台，首先面临的问题是应用的隔离，缺乏良好的隔离机制，平台必然无法长期稳定地运行。目前SAE的隔离性主要体现在以下几个方面：</p>
+                        <ul class="sandbox-list">
+                            <li><img src="/static/image/home/service_content/ready.png">代码和数据的隔离</li>
+                            <li><img src="/static/image/home/service_content/ready.png">连接数的隔离</li>
+                            <li><img src="/static/image/home/service_content/ready.png">内存隔离</li>
+                            <li><img src="/static/image/home/service_content/ready.png">CPU隔离</li>
+                        </ul>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/sandbox.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="lang-area span12">
+                        <h5>目前SAE支持以下开发语言</h5>
+                        <ul class="lang-list">
+                            <li><a href="/doc/php/index.html"><img src="/static/image/home/service_content/php.png"></a></li>
+                            <li><a href="/doc/java/index.html"><img src="/static/image/home/service_content/java.png"></a></li>
+                            <li><a href="/doc/python/index.html"><img src="/static/image/home/service_content/python.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Web服务器结束-->
+            <!--缓存开始-->
+            <div class="inner-item row-fluid hide">
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/memcache.html#memcache">分布式缓存 SAE Memcache</a></h5>
+                        <p>SAE Memcache是SAE为开发者提供的分布式缓存服务，用来以共享的方式缓存用户的小数据。</p>
+                        <p>因为SAE的Web Service是分布式环境，所以当用户需要共享的缓存某些key-value形式的小数据时，就需要用Memcache服务，这样可以快速进行数据响应，而且可以减轻后端存储的压力。</p>
+                        <p>SAE Memcache采用memcache池的办法，任何用户看到的是整个MC服务，而不再是每个用户对应一个MC实例。</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/memcache.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="mem-area">
+                        <div class="span6">
+                            <h5>传统 Memcache缺点</h5>
+                            <p>1.为控制成本，一般个人或小型企业Memcache的缓存池容量有限，这就增加了宕机时的缓存穿透几率。</p>
+                            <p>2.扩容风险高，通常当缓存容量不足，需要扩容，增加更多的实例时，需要修改客户端hash规则，即便是一致性hash，也会发生缓存丢失的可能。</p>
+                            <p>3.传统的Memcache整个系统是一个LRU链，但是缓存数据的重要性是不一致的，有的数据要求尽可能低的LRU，有的数据则对LRU不是很敏感。传统上需要起不同的memcache实例，才可以保证使用不同的LRU链。</p>
+                        </div>
+                        <div class="span6">
+                            <h5>SAE Memcache特点</h5>
+                            <p>1.SAE Memcache采用企业级规模的缓存池。巨大容量的缓存池，将发生宕机时缓存的穿透率维持在一个很低的水平。</p>
+                            <p>2.无缝扩容，SAE Memcache可动态调整，只需要调整内存容量即可完成扩容，不需要更改客户端hash规则，不会丢失缓存。客户不需要预先做容量规划，调整内存零成本。</p>
+                            <p>3.SAE Memcache支持domain的概念。不同的domain有不同的内存限制，不同的LRU，用户可以根据数据的重要性，设置内存限制，这些数据的LRU不会相互影响。</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--缓存结束-->
+            <!--数据库开始-->
+            <div class="inner-item row-fluid hide">
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/mysql.html#mysql">MYSQL</a></h5>
+                        <p>SAE平台为每个APP支持几乎所有MySQL的特性。您还可以通过任意语言的标准MySQL客户端来管理数据库，而不需要修改一行代码。</p>
+                        <p>另外，每组MySQL都采用，一主库，多从库，加一备份库的设计，充分保证了数据库的性能，以及数据的可靠性</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/mysql.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span12">
+                        <h5><a href="/doc/php/kvdb.html#kvdb">KVDB(NoSQL)</a></h5>
+                        <p>因为传统关系型数据库在分布式环境下表现的扩展性不足等缺点，近年来NoSQL的概念渐渐成为业界关注的焦点，越来越多的技术人员也习惯于使用NoSQL数据库进行日常开发，
+                            SAE为了应对这种新需求，也进行了NoSQL方向的研发。</p>
+                        <p>KV DB是SAE开发的分布式key-value数据存储服务，用来支持公有云计算平台上的海量key-value存储。KV DB支持的存储容量很大，对每个用户支持100G的存储空间，
+                            可支持1,000,000,000条记录，用户可以用KV DB存放简单数据，如好友关系等。</p>
+                        <p>KV DB是高性能高可靠存储，根据我们内部测试，读写都可以达到10w qps。KV DB采用一主多从的分布式架构，
+                            SAE提供热备和定期冷备，发生宕机时，会自动切换到健康的DB上。</p>
+                    </div>
+                </div>
+            </div>
+            <!--数据库结束-->
+            <!--安全开始-->
+            <div class="inner-item row-fluid hide">
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/intro/security.html#web">代码安全</a></h5>
+                        <p>SAE的Runtime环境中每个App在运行时都是隔离开的，应用无法跳出沙箱获取到别人的代码，从而保证用户应用代码的安全。</p>
+                        <p>另外，除了登录密码，在线部署代码或使用SVN部署代码时，还需要使用安全密码，这更进一步增加代码的安全性。</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/code_safe.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/afw.html#id1">应用防火墙</a></h5>
+                        <p>被不明IP恶意抓取和攻击是每一个应用都有可能遇到的问题，造成的问题有两方面：一是应用的数据被别人非法获取，二是用户的带宽资源被大量消耗。
+                            SAE针对这样的问题提供“应用防火墙”的服务，用户可以在面板自定义来源IP的访问频率（分钟/小时/天等）、流量，定义黑白名单，有效保护自己应用的数据和带宽资源。
+                        </p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/app_firewall.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/appexam.html#id1">应用体检</a></h5>
+                        <p>应用层面的安全，往往是由于用户代码安全缺陷引发。主要的安全问题有：SQL注入、跨站、挂马。对此，SAE提供”应用体检”服务，其中包含了安全方面的检查，
+                            可以有效发现SQL注入、跨站攻击、挂马等安全问题，主动通知到用户。</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/app_exam.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/intro/security.html#id1">安全密码保护方案</a></h5>
+                        <p>除了用户自己需要加强安全方面的意识，加固电脑本身的安全外。SAE平台也正在做针对安全密码保护的解决方案。首先是SAE将会对安全密码的登陆来源IP做实时检测，针对异地IP做手机的验证。
+                            其次如果客户对安全性要求更高，那么还可以申请使用手机动态口令+安全密码的组合密码来提高安全性。</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/safe_password.png">
+                    </div>
+                </div>
+            </div>
+            <!--安全结束-->
+            <!--任务调度开始-->
+            <div class="inner-item row-fluid hide">
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/cron.html#cron">Cron</a></h5>
+                        <p>Cron服务是SAE为开发者提供的分布式定时服务，用来定时触发开发者的特定动作，满足比如定时计算排行榜等需求。Cron的执行是以HTTP方式触发的，
+                            触发后真正执行的是用户在App中的代码。Cron服务是分布式环境部署的，具有高可靠性，多点之间相互隔离且同时触发，并且通过分布式锁进行选举并最终由一个健康节点执行。
+                        </p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/cron.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/taskqueue.html#taskqueue">TaskQueue</a></h5>
+                        <p>TaskQueue是SAE为开发者提供的分布式任务队列服务，用来以异步HTTP方式执行用户任务。用户需要先在在线管理平台创建Queue，
+                            然后向Queue Push任务，放入队列的任务随即即会执行。TaskQueue的任务的执行是以HTTP方式执行的，真正执行的是用户在App中的代码，所以最长执行时间和HTTP页面执行时间相同。
+                            TaskQueue服务是分布式环境部署的，具有高可靠性，每个worker相互隔离，并且主动负责任务执行。
+                        </p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/task_queue.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/deferredjob.html#deferredjob">DeferredJob</a></h5>
+                        <p>DeferredJob是SAE为开发者提供的分布式的离线任务执行队列，和TaskQueue的区别主要在于TaskQueue以HTTP方式触发，
+                            有页面执行时间的限制；而DeferredJob是系统级语言执行的，没有执行时间限制的
+                        </p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/deferred_job.png">
+                    </div>
+                </div>
+            </div>
+            <!--任务调度结束-->
+            <!--存储服务开始-->
+            <div class="inner-item row-fluid hide">
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/storage.html#storage">Storage</a></h5>
+                        <p>Storage是SAE为开发者提供的分布式文件存储服务，用来存放用户的持久化存储的文件。用户可以通过API读取文件、写入文件、获取文件属性、取得文件列表等操作。</p>
+                        <p>基于Storage，开发者可以很方便的开发出类似于云存储的应用。</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/storage.png">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-area span8">
+                        <h5><a href="/doc/php/cdn.html#cdn">CDN</a></h5>
+                        <p>SAE拥有覆盖全国各大城市的多路（电信、联通、移动、教育）骨干网络CDN节点，现在SAE将开放这些节点，让普通用户也有机会使用高质量的CDN服务。</p>
+                        <p>启用CDN服务以后，您可将Storage中的数据推送至各个CDN节点，您的用户在访问应用时，将就近获取，从而获得更快的访问速度。</p>
+                    </div>
+                    <div class="image-area span3">
+                        <img src="/static/image/home/service_content/cdn.jpg">
+                    </div>
+                </div>
+            </div>
+            <!--存储服务结束-->
+            <!--扩展服务开始-->
+            <div class="inner-item row-fluid hide">
+                <div class="item">
+                    <div class="mini-icon-area span1">
+                        <img src="/static/image/home/service_content/sms.png">
+                    </div>
+                    <div class="text-area span11">
+                        <h5><a href="/?m=serlist&amp;a=detail&amp;service_code=AF">短信服务</a></h5>
+                        <p>***短信服务是由***无线提供的综合性短信服务。通过该服务您可以给指定的手机下发短信( 支持中国移动、中国联通、中国电信网络，短信到达率90%以上)。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="mini-icon-area span1">
+                        <img src="/static/image/home/service_content/gis.png">
+                    </div>
+                    <div class="text-area span11">
+                        <h5><a href="/?m=serlist&amp;a=detail&amp;service_code=AC">地理位置服务</a></h5>
+                        <p>地理信息服务是由***研发部门提供的综合地理信息相关服务，通过此服务可以查询路线，公交，IP位置，地图等地理位置相关的信息。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="mini-icon-area span1">
+                        <img src="/static/image/home/service_content/search.png">
+                    </div>
+                    <div class="text-area span11">
+                        <h5><a href="/?m=serlist&amp;a=detail&amp;service_code=AA">分词服务</a></h5>
+                        <p>中文分词(Chinese Word Segmentation)指的是将一个汉字序列切分成一个一个单独的词。中文分词是文本挖掘的基础，对于输入的一段中文，成功的进行中文分词，可以达到电脑自动识别语句含义的效果。
+                            SAE分词系统基于隐马模型开发出的汉语分析系統，主要功能包括中文分词、词性标注、命名实体识别、新词识别。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--扩展服务结束-->
+        </div>
+    </div> 
+</div>
